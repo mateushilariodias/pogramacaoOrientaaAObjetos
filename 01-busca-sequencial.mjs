@@ -16,6 +16,9 @@ function buscaSequencial(vetor, valorBusca){
     return -1
 }
 
-const frutas = ["laranja", "maça", "uva", "pera", "jabuticaba", "limão"]
+// const frutas = ["laranja", "maça", "uva", "pera", "jabuticaba", "limão"]
+// console.log("A posição da uva é: ", buscaSequencial(frutas, "uva"))
 
-console.log("A posição da uva é: ", buscaSequencial(frutas, "uva"))
+import { nomes } from './data/vetor-nomes.mjs'
+
+console.log("Posição de ALEXANDRE: ", buscaSequencial(nomes, 'ALEXANDRE'))
