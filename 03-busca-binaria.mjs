@@ -27,3 +27,4 @@ function buscaBinaria(vetor, valorBusca){
 import {nomes} from './data/vetor-nomes.mjs'
 
 console.log('Posição de ALEXANDRE: ',buscaBinaria(nomes, "ALEXANDRE"))
+console.log(`Posição de JOSE: ${buscaBinaria(nomes, "JOSE")}`)
