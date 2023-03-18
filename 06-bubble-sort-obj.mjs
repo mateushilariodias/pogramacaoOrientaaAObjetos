@@ -27,8 +27,18 @@ import {objMotoristas} from './data/motoristas-obj-desord.mjs'
 // console.log(objMotoristas)
 
 //ordenação decrescente ignorando acentos
-console.time('Tempo de ordenação')
-bubbleSort(objMotoristas,(elem1,elem2) => elem1.nome_motorista.localeCompare(elem2.nome_motorista, 'pt-br') <=0)
-console.timeEnd('Tempo de ordenação')
-console.log(objMotoristas)
+// console.time('Tempo de ordenação')
+// bubbleSort(objMotoristas,(elem1,elem2) => elem1.nome_motorista.localeCompare(elem2.nome_motorista, 'pt-br') <=0)
+// console.timeEnd('Tempo de ordenação')
+// console.log(objMotoristas)
 
+
+//Ordenação Dois Níveis: primeiro por razão_social, depois por nome_motorista
+bubbleSort(objMotoristas, (elem1, elem2) => {
+    if(elem1.razao_social === elem2.razao_social){
+        return elem1.nome_motorista > elem2.nome_motorista
+        }
+        return elem1.razao_social > elem2.razao_social
+})
+
+console.log(objMotoristas)
