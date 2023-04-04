@@ -50,8 +50,14 @@ function mergeSort(vetor){
 
 }
 
-let nums = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+// let nums = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 
-let numsOrdenados = mergeSort(nums)
+// let numsOrdenados = mergeSort(nums)
 
-console.log(numsOrdenados)
+// console.log(numsOrdenados)
+
+import { nomes } from './data/nomes-desord.mjs'
+
+let nomesOrdenados = mergeSort(nomes)
+
+console.log(nomesOrdenados)
