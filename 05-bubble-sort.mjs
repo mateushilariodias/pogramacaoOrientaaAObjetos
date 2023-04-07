@@ -1,36 +1,57 @@
-let pass, trocas, comp
+/*
+    BUBBLE SORT
+    Percorre o conjunto de dados, comparando o elemento atual com o seu
+    sucessor e promovendo a troca entre eles caso o primeiro seja maior
+    que o segundo.
+    Faz isso em várias passadas, até, que, na última delas, nenhuma troca
+    tenha sido registrada.
+*/
 
-function bubbleSort(vetor){
+let pass, comps, trocas
 
-    pass= 0, trocas = 0, comp =0
+function bubbleSort(vetor) {
 
-    let swap
+    pass = 0, comps = 0, trocas = 0
 
-    do{
+    let trocou
+
+    do {
         pass++
-        swap = false
+        trocou = false
 
-        for(let i=0; i < vetor.length - 1; i++){
-            comp++
-            if(vetor[i] > vetor[i+1]){
-                [ vetor[i], vetor[i+1] ] = [ vetor[i+1] , vetor[i] ]
-                swap = true
+        // Percurso for tradicional até a PENÚLTIMA posição do vetor
+        for(let i = 0; i < vetor.length - 1; i++) {
+            comps++
+            if(vetor[i] > vetor[i + 1]) {
+                // Efetua a troca entre os elementos por desestruturação
+                [ vetor[i], vetor[i + 1] ] = [ vetor[i + 1], vetor[i] ]
+                trocou = true
                 trocas++
             }
         }
 
-    }while(swap)
+    } while(trocou)
 }
-// let nums = [0,1,2,3,4,5,6,7,8,9]
 
-// bubbleSort(nums)
-// console.log("Ordenação: ", nums)
-// console.log({pass, comp, trocas})
-import {nomes} from './data/nomes-desord.mjs'
+let nums = [ 77, 44, 22, 33, 99, 55, 88, 0, 66, 11 ]
+
+// Pior caso
+// let nums = [ 99, 88, 77, 66, 55, 44, 33, 22, 11, 0 ]
+
+// Melhor caso
+//let nums = [ 0, 11, 22, 33, 44, 55, 66, 77, 88, 99 ]
+
+bubbleSort(nums)
+console.log(nums)
+console.log({pass, comps, trocas})
+
+/***************************************************************/
+
+import { nomes } from './data/nomes-desord.mjs'
 
 console.time('Tempo de ordenação')
 bubbleSort(nomes)
 console.timeEnd('Tempo de ordenação')
 
 console.log(nomes)
-console.log({pass, comp, trocas})
+console.log({pass, comps, trocas})

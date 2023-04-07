@@ -1,41 +1,61 @@
-let pass, comp, trocas
+let pass, comps, trocas
 
-function selecionSort(vetor, fnComp){
+function selectionSort(vetor, fnComp) {
 
-    pass = 0, comp = 0, trocas = 0
+    pass = 0, comps = 0, trocas = 0
 
-    for (let posSel = 0; posSel < vetor.length -1; posSel++){
+    // Loop posSel vai até a PENÚLTIMA posição do vetor
+    for(let posSel = 0; posSel < vetor.length - 1; posSel++) {
         pass++
 
-        let posMenor = posSel+1
+        let posMenor = posSel + 1
 
-        for(let i = posMenor + 1; i < vetor.length; i++){
-            if(fnComp(vetor[posMenor] , vetor[i])){
-                posMenor = i
-                comp++
-            }
+        // Loop para procurar o menor valor no restante do vetor
+        for(let i = posMenor + 1; i < vetor.length; i++) {
+            // if(vetor[posMenor] > vetor[i]) posMenor = i
+            if(fnComp(vetor[posMenor], vetor[i])) posMenor = i
+            comps++
         }
 
-        if(fnComp(vetor[posSel] , vetor[posMenor])){
-            [ vetor[posSel], vetor[posMenor] ]= [ vetor[posMenor], vetor[posSel] ]
+        // Se o valor em posMenor for menor que o valor em posSel,
+        // efetua a troca
+        comps++
+        // if(vetor[posSel] > vetor[posMenor]) {
+        if(fnComp(vetor[posSel], vetor[posMenor])) {
+            [ vetor[posSel], vetor[posMenor] ] = [ vetor[posMenor], vetor[posSel] ]
             trocas++
         }
+
     }
+
 }
 
-// let nums = [77, 44, 22, 33, 99, 55, 88, 0, 66, 11]
-
-// selecionSort(nums)
-// console.log(nums)
-
-import {objMotoristas} from './data/motoristas-obj-desord.mjs'
+import { objMotoristas } from './data/motoristas-obj-desord.mjs'
 
 console.time('Tempo de ordenação')
+
 // Ordenando por nome_motorista
-selecionSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista)
+//selectionSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista)
+
+// Ordenando por nome_motorista em ordem DECRESCENTE
+// selectionSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista < elem2.nome_motorista)
+
+// Ordenando por nome_motorista em ordem DECRESCENTE ignorando acentos
+// selectionSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista.localeCompare(elem2.nome_motorista, 'pt-br') <= 0)  // LEEEEENTO
+
+// Ordenação em dois níveis: primeiro por razao_social e depois por nome_motorista
+selectionSort(objMotoristas, (elem1, elem2) => {
+    if(elem1.razao_social === elem2.razao_social) {     // Mesma empresa
+        // Desempate é feito pelo nome do motorista
+        return elem1.nome_motorista > elem2.nome_motorista
+    }
+    // Empresas diferentes, comparação direta de razao_social
+    else return elem1.razao_social > elem2.razao_social
+})
+
 let memoriaMB = process.memoryUsage().heapUsed / 1024 / 1024
+
 console.timeEnd('Tempo de ordenação')
 
 console.log(objMotoristas)
-console.log({pass, comp, trocas, memoriaMB})
-
+console.log({pass, comps, trocas, memoriaMB})
