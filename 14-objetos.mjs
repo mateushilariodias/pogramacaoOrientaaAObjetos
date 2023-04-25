@@ -39,7 +39,7 @@ function calcularArea(forma) {
             return forma.base * forma.altura
         case 'T': // Triângulo
             return forma.base * forma.altura / 2
-        case 'E':
+        case 'E': // Elipse
             return (forma.base / 2) * (forma.altura / 2) * Math.PI
         default:
             return null
