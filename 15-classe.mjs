@@ -58,7 +58,7 @@ class FormaGeometrica {
 
 
 let obj1 = new FormaGeometrica(2, 20, 'R')
-let obj2 = new FormaGeometrica(-11, 30, 'T')
+let obj2 = new FormaGeometrica(1, 30, 'T')
 let obj3 = new FormaGeometrica(4, 40, 'E')
 
 console.log(obj2.calcularArea())
