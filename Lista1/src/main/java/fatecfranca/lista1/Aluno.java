@@ -8,18 +8,18 @@ package fatecfranca.lista1;
  *
  * @author mateu
  */
-public class aluno {
-    int numeroAluno;
+public class Aluno {
+        int numeroAluno;
     String nome;
     int idade;
     float p1;
     float p2;
     
-    public aluno(){
+    public Aluno(){
         
     }
     
-        public aluno(int numeroAluno, String nome, int idade, 
+        public Aluno(int numeroAluno, String nome, int idade, 
             float p1, float p2){
         this.numeroAluno = numeroAluno;
         this.nome = nome;
@@ -37,5 +37,4 @@ public class aluno {
              System.out.println("numero do aluno: " + this.numeroAluno + "\n Nome " + 
             this.nome + "\nidade " + this.idade);
         }
-    
 }
