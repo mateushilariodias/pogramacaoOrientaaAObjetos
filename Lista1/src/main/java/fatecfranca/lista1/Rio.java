@@ -18,7 +18,7 @@ public class Rio {
 
     }
 
-    public void Rio(String nome, float nível, Boolean poluído) {
+    public Rio(String nome, float nível, Boolean poluído) {
         this.nome = nome;
         this.nível = nível;
         this.poluído = poluído;
@@ -49,9 +49,7 @@ public class Rio {
     }
 
     public void mostrar() {
-        System.out.println("Nome do rio:" + this.nome
-                + "\n Nível do rio:" + this.nível
-                + "\n Poluído:" + this.poluído);
+        System.out.println("Nome do rio: " + this.nome + "\n Nível do rio: " + this.nível + "\n Poluído: " + this.poluído);
     }
 
 }
