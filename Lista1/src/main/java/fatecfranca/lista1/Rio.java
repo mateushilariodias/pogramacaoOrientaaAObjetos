@@ -10,28 +10,28 @@ package fatecfranca.lista1;
  */
 public class Rio {
 
-    String nome;
-    float nível;
-    Boolean poluído;
+    public String nome;
+    public float nivel;
+    public Boolean poluido;
 
     public Rio() {
 
     }
 
-    public Rio(String nome, float nível, Boolean poluído) {
+    public Rio(String nome, float nivel, Boolean poluido) {
         this.nome = nome;
-        this.nível = nível;
-        this.poluído = poluído;
+        this.nivel = nivel;
+        this.poluido = poluido;
     }
 
     public void chover(float x) {
-        this.nível = nível + x;
+        this.nivel = nivel + x;
         System.out.println("Aumentou o nível do rio!");
     }
 
     public void ensolarar(float y) {
-        if (this.nível >= y) {
-            this.nível = nível - y;
+        if (this.nivel >= y) {
+            this.nivel = nivel - y;
             System.out.println("Baixou o nível do rio!");
         } else {
             System.out.println("Secou!");
@@ -39,17 +39,17 @@ public class Rio {
     }
 
     public void limpar() {
-        this.poluído = false;
-        System.out.println(this.poluído);
+        this.poluido = false;
+        System.out.println(this.poluido);
     }
 
     public void sujar() {
-        this.poluído = true;
-        System.out.println(this.poluído);
+        this.poluido = true;
+        System.out.println(this.poluido);
     }
 
     public void mostrar() {
-        System.out.println("Nome do rio: " + this.nome + "\n Nível do rio: " + this.nível + "\n Poluído: " + this.poluído);
+        System.out.println("Nome do rio: " + this.nome + "\n Nível do rio: " + this.nivel + "\n Poluído: " + this.poluido);
     }
 
 }
