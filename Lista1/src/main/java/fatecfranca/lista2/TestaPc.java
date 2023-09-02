@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package lista_2_ex0;
+package fatecfranca.lista2;
 
 /**
  *
@@ -20,6 +20,11 @@ public class TestaPc {
         obj1.setModelo("Ideapad 3");
         obj1.setRam(8);
         System.out.println("Ram " + obj1.getRam());
+        obj1.setDisco(256);
+        obj1.setProcessador("I7");
+        
     }
+    
+    
     
 }
