@@ -23,8 +23,11 @@ public class TestaPc {
         obj1.setDisco(256);
         obj1.setProcessador("I7");
         
+        Pc obj2 = new Pc ("Dell", "Vosto 15", "i5", 32, 512);
+        System.out.println(obj2.toString());
+        
+        Pc obj3 = new Pc ("Dell", "Vosto 15", "i5", 19, 200);
+        System.out.println(obj3.toString());
     }
-    
-    
     
 }

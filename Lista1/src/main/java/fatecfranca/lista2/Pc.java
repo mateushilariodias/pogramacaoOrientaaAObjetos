@@ -49,7 +49,7 @@ public class Pc {
     }
     
     public final void setDisco(int disco){
-        if (disco % 120 == 0) {
+        if (disco % 128 == 0) {
             this.disco = disco;
         }
         else {
