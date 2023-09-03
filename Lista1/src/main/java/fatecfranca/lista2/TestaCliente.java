@@ -24,6 +24,10 @@ public class TestaCliente {
         obj2.depositar(3000.00f);
         obj2.sacar(8000.0f);
         System.out.println(obj2.toString());
+        
+        //int nomeDoCliente = obj1.nome;
+        //  Ao tentar acessar as variáveis de instância da classe Cliente sem os métodos get e set, ocorre um erro de compilação devido ao modificador de acesso private dessas variáveis. Elas são inacessíveis fora da classe Cliente.
+
     }
     
 }
