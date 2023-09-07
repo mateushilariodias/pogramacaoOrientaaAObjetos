@@ -15,8 +15,8 @@ public class TestaAluno {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Aluno obj1 = new Aluno(123456, 17, "Douglas", 7.8f, 6.3f);
-        System.out.println(obj1.notaFinal());
+        Aluno obj1 = new Aluno(123456, 17, "Douglas", -7.8f, 6.3f);
+        obj1.notaFinal();
         System.out.println(obj1.dadosAluno());
 
         //int nomeDoAluno = obj1.nome;

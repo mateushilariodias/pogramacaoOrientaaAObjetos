@@ -9,6 +9,7 @@ package fatecfranca.lista2;
  * @author mateu
  */
 public class Aluno {
+
     private int numeroAluno, idade;
     private String nome;
     private float p1, p2;
@@ -21,8 +22,9 @@ public class Aluno {
         this.setP2(p2);
     }
 
-    public Aluno() {}
-    
+    public Aluno() {
+    }
+
     public int getNumeroAluno() {
         return numeroAluno;
     }
@@ -31,7 +33,7 @@ public class Aluno {
         if (String.valueOf(numeroAluno).length() == 6) {
             this.numeroAluno = numeroAluno;
         } else {
-            System.out.println("Número da conta inválido!");
+            System.out.println("Número do alluno inválido!");
         }
     }
 
@@ -83,13 +85,17 @@ public class Aluno {
             System.out.println("A nota da p2 não pode ser negativa!");
         }
     }
-    
-    public float notaFinal() {
-        return ((this.p1 + this.p2) /2);
+
+    public final void notaFinal() {
+        if (this.p1 >= 0 && this.p2 >= 0) {
+            System.out.println((this.p1 + this.p2) / 2);
+        } else {
+            System.out.println("As notas p1 e p2 devem ser positivas");
+        }
     }
 
     public String dadosAluno() {
         return "Aluno{" + "numeroAluno=" + numeroAluno + ", idade=" + idade + ", nome=" + nome + '}';
     }
-    
+
 }
