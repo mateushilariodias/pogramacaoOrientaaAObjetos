@@ -9,27 +9,10 @@ package fatecfranca.lista4;
  * @author mateu
  */
 public class Person {
+
     private String name, user;
 
-    @Override
-    public String toString() {
-        return "Person{" + "name=" + name + ", user=" + user + '}';
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public final void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public final void setUser(String user) {
-        this.user = user;
+    public Person() {
     }
 
     public Person(String name, String user) {
@@ -37,6 +20,24 @@ public class Person {
         this.setUser(user);
     }
 
-    public Person() {
+    public String getName() {
+        return name;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public final void setName(String name) {
+        this.name = name;
+    }
+
+    public final void setUser(String user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" + "name=" + name + ", user=" + user + '}';
     }
 }
