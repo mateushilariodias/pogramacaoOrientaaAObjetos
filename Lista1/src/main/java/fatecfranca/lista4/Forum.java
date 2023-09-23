@@ -19,6 +19,12 @@ public class Forum {
         this.messages = new ArrayList();
     }
 
+    public Forum(String name, String url) {
+        this.name = name;
+        this.url = url;
+        this.messages = new ArrayList();
+    }
+    
     public Forum(String name, String url, ArrayList<Message> messages) {
         this.setName(name);
         this.setUrl(url);
@@ -59,7 +65,7 @@ public class Forum {
 
     @Override
     public String toString() {
-        return "Forum{" + "name=" + name + ", url=" + url + ", messages=" + messages + '}';
+        return "\nForum{" + "\nname=" + name + ",\n url=" + url + ",\n messages=" + messages + '}';
     }
 
 }

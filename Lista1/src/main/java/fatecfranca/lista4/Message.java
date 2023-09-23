@@ -39,7 +39,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" + "text=" + text + ", person=" + person + '}';
+        return "Message{" + "text=" + text + ", person=" + person.toString() + '}';
     }
 
 }
