@@ -33,4 +33,9 @@ public class Horse extends Animal {
         return "\nHorse{" + "\ncompetitor=" + competitor + super.toString() + '}';
     } 
     
+    @Override
+    public String move(){
+        return "Troting";
+    }
+    
 }

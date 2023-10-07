@@ -41,4 +41,6 @@ public abstract class Animal {
         return "\nAnimal{" + "\nname=" + name + ", age=" + age + '}';
     }
     
+    public abstract String move(); 
+    
 }

@@ -60,8 +60,6 @@ public abstract class Funcionario {
         return "\nFuncionario{" + "\nnome=" + nome + "\n, endereco=" + endereco + ",\n cpf=" + cpf + ",\n salario=" + salario + '}';
     }
 
-    public float calculaSalario() {
-        return this.salario;
-    }
+    public abstract float calculaSalario();
 
 }

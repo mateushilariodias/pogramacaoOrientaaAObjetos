@@ -42,4 +42,9 @@ public class Snake extends Animal {
         return "Snake{" + "poisonous=" + poisonous + ", smokes=" + smokes + super.toString() + '}';
     }
     
+    @Override
+    public String move(){
+        return "slithering";
+    }
+    
 }
